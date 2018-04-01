@@ -1,0 +1,23 @@
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'script/**/*'
+    - 'test/**/*'
+    - 'config/**/*'
+    - 'vendor/**/*'
+    - 'bin/**'
+    - 'node_modules/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 135
+
+Metrics/ClassLength:
+  Exclude:
+    - 'app/models/user.rb'
