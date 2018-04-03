@@ -3,6 +3,11 @@
   %nav.navbar.my-2.my-md-0.mr-md-3
     = link_to 'INICIO', '#', class: 'nav-link p-2 text-dark'
     = link_to 'MEDIA', '#', class: 'nav-link p-2 text-dark'
-    = link_to 'NOSTROS', 'about', class: 'nav-link p-2 text-dark'
+    = link_to 'NOSTROS', '#', class: 'nav-link p-2 text-dark'
+    = link_to 'Cerrar sesión', destroy_admin_session_path, method: :delete, class: 'nav-link p-2 text-dark'
   %nav.btn.btn-dark
     something
+%p.notice
+  = notice
+%p.alert
+  = alert
