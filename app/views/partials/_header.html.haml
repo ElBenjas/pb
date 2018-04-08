@@ -11,3 +11,5 @@
         .dropdown-menu{'aria-labelledby': 'navbarDropdown'}
           = link_to 'Cerrar sesión', destroy_admin_session_path, method: :delete, class: 'dropdown-item text-dark'
           = link_to 'Nuevo Post', '#', class: 'dropdown-item text-dark'
+
+= render 'layouts/alerts'
