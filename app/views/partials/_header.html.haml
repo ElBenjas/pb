@@ -7,9 +7,12 @@
     - if admin_signed_in?
       %nav-item.dropdown
         %button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle{"aria-expanded": "false", "aria-haspopup": "true", "data-toggle": "dropdown", type: "button"}
-          = current_admin.email
+          = current_admin.profile.name
         .dropdown-menu{'aria-labelledby': 'navbarDropdown'}
-          = link_to 'Cerrar sesión', destroy_admin_session_path, method: :delete, class: 'dropdown-item text-dark'
-          = link_to 'Nuevo Post', '#', class: 'dropdown-item text-dark'
-
+          = link_to 'Nuevo Post', '#', class: 'dropdown-item text-dark drop-link-menu'
+          - if current_admin.profile.nil?
+            = link_to 'Crea tu perfil', '#', class: 'dropdown-item drop-link-menu'
+          - else
+            = link_to 'Perfil', '#', class: 'dropdown-item drop-link-menu'
+          = link_to 'Cerrar sesión', destroy_admin_session_path, method: :delete, class: 'dropdown-item text-dark drop-link-menu'
 = render 'layouts/alerts'
