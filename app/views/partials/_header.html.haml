@@ -1,0 +1,15 @@
+.d-fl.d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.border-bottom.box-shadow
+  %h5.my-0.mr-md-auto.font-weight-normal
+  %nav.navbar.my-2.my-md-0.mr-md-3
+    = link_to 'INICIO', '#', class: 'nav-link p-tb-2 p-lf-3 text-dark link-header'
+    = link_to 'MEDIA', '#', class: 'nav-link p-tb-2 p-lf-3 text-dark link-header'
+    = link_to 'NOSTROS', '#', class: 'nav-link p-tb-2 p-lf-3 text-dark link-header'
+    - if admin_signed_in?
+      %nav-item.dropdown
+        %button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle{"aria-expanded": "false", "aria-haspopup": "true", "data-toggle": "dropdown", type: "button"}
+          = current_admin.email
+        .dropdown-menu{'aria-labelledby': 'navbarDropdown'}
+          = link_to 'Cerrar sesión', destroy_admin_session_path, method: :delete, class: 'dropdown-item text-dark'
+          = link_to 'Nuevo Post', '#', class: 'dropdown-item text-dark'
+
+= render 'layouts/alerts'
