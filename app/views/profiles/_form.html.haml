@@ -1,0 +1,10 @@
+.row.d-flex
+  .col-sm-12.col-md-4.offset-md-4
+    .form-group
+      = form_for @profile, url: url do |f|
+        = f.label 'Nombre'
+        = f.text_field :name, class: 'form-control', placeholder: 'Nombre'
+        = f.label 'Observaciones', class: 'mt-2'
+        = f.text_area :observations, class: 'form-control', placeholder: 'Observaciones', rows: "10"
+        .text-center
+          = f.submit 'Guardar', class: 'btn btn-primary mt-4 align-content text-align: center'

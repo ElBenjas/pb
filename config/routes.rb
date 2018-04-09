@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: "posts#index"
 
   resources :posts
+  # resources :profiles, only: [:show, :new, :create, :edit, :update]
+  resources :profiles
 
   get '/about', to: 'abouts#show', as: 'about'
 end
